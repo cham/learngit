@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Learngit : A very brief example of using forks and branches for assumed beginners" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Learngit</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/cham/learngit">View on GitHub</a>
+
+          <h1 id="project_title">Learngit</h1>
+          <h2 id="project_tagline">A very brief example of using forks and branches for assumed beginners</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/cham/learngit/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/cham/learngit/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="learngit" class="anchor" href="#learngit"><span class="octicon octicon-link"></span></a>learngit</h1>
+
+<h2>
+<a name="1-forking-once-per-project" class="anchor" href="#1-forking-once-per-project"><span class="octicon octicon-link"></span></a>1. Forking (once per project)</h2>
+
+<p>Click on the 'Fork' button in the top right there. This will 'fork' the repo to your account. That means you have your own copy of this project which you can do whatever you like with.</p>
+
+<h2>
+<a name="2-cloning-your-fork-once-per-project" class="anchor" href="#2-cloning-your-fork-once-per-project"><span class="octicon octicon-link"></span></a>2. Cloning your fork (once per project)</h2>
+
+<p>Navigate to your fork on github (<a href="http://github.com/youraccountname/learngit">http://github.com/youraccountname/learngit</a></p>
+
+<p>Copy the SSH clone URL in the right hand bar.</p>
+
+<p>On the command line, cd to the directory you want to clone it to and run this:</p>
+
+<p><code>git clone PASTE_SSH_URL_HERE</code></p>
+
+<p>This will create a folder in that directory called 'learngit' with your copy of the project in it. Note this is from your fork, not the main one!</p>
+
+<h2>
+<a name="3-adding-a-reference-to-the-main-repo-once-per-project" class="anchor" href="#3-adding-a-reference-to-the-main-repo-once-per-project"><span class="octicon octicon-link"></span></a>3. Adding a reference to the main repo (once per project)</h2>
+
+<p>You'll need to add a reference to the main repo so you can keep up to date with any changes it makes. You only need to do this once:</p>
+
+<p>Run this in your 'learngit' folder in your repo:</p>
+
+<p><code>git remote add upstream git@github.com:cham/learngit.git</code></p>
+
+<p>This will add a reference to a remote repo called 'learngit' to your local copy.</p>
+
+<p>You can see all your remotes by running this:</p>
+
+<p><code>git remote -v</code></p>
+
+<p>The ones with (fetch) after are ones you can pull from and the ones with (push) after are ones you can push to.</p>
+
+<p>You should have 2 entries for origin, fetch and push - because you own that one so you can do what you like with it - and at least a fetch entry for upstream.</p>
+
+<h2>
+<a name="4-branching-once-per-feature--bugfix--whatever" class="anchor" href="#4-branching-once-per-feature--bugfix--whatever"><span class="octicon octicon-link"></span></a>4. Branching (once per feature / bugfix / whatever)</h2>
+
+<p>First of all, checkout your master:</p>
+
+<p><code>git checkout master</code></p>
+
+<p>Then fetch the latest history from upstream, so you can apply that history to your master in a moment:</p>
+
+<p><code>git fetch upstream</code></p>
+
+<p>Once that's done you can rebase your local master against the upstream master. In other words, pull the latest changes and apply them to your master branch</p>
+
+<p><code>git rebase upstream/master</code></p>
+
+<p>Now you can make your branch, which will be based off the current branch (your master which you just updated):</p>
+
+<p><code>git checkout -b your-branch-name</code></p>
+
+<h2>
+<a name="5-working" class="anchor" href="#5-working"><span class="octicon octicon-link"></span></a>5. Working</h2>
+
+<p>Do some work, edit files, etc. When you want to make a commit:</p>
+
+<p><code>git add -p</code></p>
+
+<p>This runs an interactive add which allows you to select which parts of which files you want to add to the commit.</p>
+
+<p>When you're happy with what you've added check things are looking ok with:</p>
+
+<p><code>git status</code></p>
+
+<p>It should tell you the right files are staged for commit. If not you can 'git reset HEAD' which will unstage everything (but not delete anything)</p>
+
+<p>Make your commit and give it a descriptive message:</p>
+
+<p><code>git commit -m "This fixes that bug!"</code></p>
+
+<p>And push it to your remote</p>
+
+<p><code>git push origin your-branch-name</code></p>
+
+<p>Now your local branch will be pushed up to your remote - you can see it on github if you go to <a href="https://github.com/youraccountname/learngit/branches">https://github.com/youraccountname/learngit/branches</a></p>
+
+<h2>
+<a name="6-submitting-a-pr" class="anchor" href="#6-submitting-a-pr"><span class="octicon octicon-link"></span></a>6. Submitting a PR</h2>
+
+<p>Now your branch is uploaded to your origin (your fork), you can submit a PR for it so that it's included in the main repo.</p>
+
+<p>Navigate to the main repo in your browser - <a href="https://github.com/cham/learngit">https://github.com/cham/learngit</a></p>
+
+<p>Click on the green PR button, near the top. There should be an entry there with your branch name on it if you just pushed it.</p>
+
+<p>Github will let you review the PR before submitting, add a description, etc</p>
+
+<p>Submit your PR</p>
+
+<p>Wait for comments / merge!</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Learngit maintained by <a href="https://github.com/cham">cham</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
